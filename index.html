@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DUstvarjanje Računa</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body class="py-3 bg-secondary">
+
+<div class="container p-0 bg-light shadow">
+
+    <!-- Naslov Storitve-Left(dodaj id="imeStoritve") - PrenesiPDF-Desno(dodaj function print()) -->
+
+    <div class="p-2 bd-highlight border-bottom frst-bg-color">
+        <div class="d-flex justify-content-between">
+            <div class="bd-highlight"><p class="fw-bold">Račun iz ____ NASLOV STORITVE DODAJ TUKAJ</p></div>
+            <div class="ms-auto bd-highlight"><p class="fw-bold">PRENESI PDF TUKAJ</p></div>
+        </div>
+    </div>
+
+    <!-- Image-Left - Text-Right(dodaj: id="stevilkaRacuna") -->
+
+    <div class="p-2 bd-highlight frst-bg-color">
+        <div class="d-flex justify-content-between">
+            <div class="p-2 bd-highlight">
+
+                <!-- Profilna slika -->
+                <img src="media/jaz.png" class="rounded float-start border border-1" alt="...">
+            </div>
+            <div class="ms-auto p-2 bd-highlight">
+
+                <!-- ŠtevilkaRačuna (dodaj id="stevilkaRacuna")-->
+                <span class="fw-bold">Račun: #0205</span><br>
+                Izdano: 23. dec. 2021<br>
+                Zapade: 2. jan. 2022
+            </div>
+        </div>
+    </div>
+
+    <!-- Naslov Storitve-Left(dodaj id="imeStoritve") -->
+
+    <div class="px-2 bd-highlight frst-bg-color">
+        <div class="d-flex">
+            <div class="p-2 bd-highlight">
+                <p class="fw-bold">
+                    Inštrukcije matematike, fizike, programiranja - Danilo Jezernik s.p.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Naslov, Davčna, SpletnaStran-Left - SkupnaVrednost-Desno(dodaj id="celotenZnesek") -->
+
+    <div class="px-2 bd-highlight frst-bg-color">
+        <div class="d-flex bd-highlight">
+            <div class="p-2 w-100 bd-highlight">
+                Danilo Jezernik<br>
+                Podvrh 29<br>
+                Savinjska<br>
+                SI-3330 Mozirje<br>
+                SLOVENIA<br>
+                Davčna številka: SI74384444<br>
+                https://danilojezernik.com/instrukcije
+            </div>
+            <div class="p-2 flex-shrink-1 bd-highlight mt-auto">
+                <p class="fw-bold">CELOTEN ZNESEK</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tel.Kontakt-Left * emailNaslov-Left -->
+
+    <div class="p-2 bd-highlight sec-bg-color">
+        <div class="px-3 d-flex">
+            <div class="bd-highlight">
+                <img src="https://img.icons8.com/ios/15/000000/hot-line.png"/> +386 70 786 664 • <img src="https://img.icons8.com/windows/15/000000/email-open.png"/> dani.jezernik@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <!-- Naslov, Davčna, SpletnaStran-Left - SkupnaVrednost-Desno(dodaj id="celotenZnesek") -->
+
+    <div class="px-2 bd-highlight">
+        <div class="d-flex bd-highlight">
+            <div class="p-2 w-100 bd-highlight">
+                Račun za<br>
+                <span class="fw-bold">Uroš Jarc</span><br>
+                <span class="fw-bold">uros.jarc@gmail.com</span><br>
+                <span class="fw-bold">telefon: +386 51 240 885</span>
+            </div>
+            <div class="p-2 flex-shrink-1 bd-highlight mt-auto">
+                <p class="fw-bold">CELOTEN ZNESEK</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Elementi (dodaj id="elementi") in dodana vrednost cene storitve-->
+
+    <div class="px-5 pt-5 bd-highlight">
+        <div class="h5">Elementi</div>
+<!--    dodaj id in dodaj spodnji HTML    -->
+        <div class="d-flex bd-highlight border border-1">
+            <div class="p-4 w-100 bd-highlight">
+
+                <b>Inštrukcije programiranja</b><br>
+                120 x0,32 EUR | 3. jan. 2022<br>
+
+            </div>
+
+            <div class="p-4 flex-shrink-1 bd-highlight mt-auto">
+                <p class="fw-bold">ZNESEK</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Seštevek (dodaj id="seštevek") in dodana končna vrednost celotne storitve-->
+
+    <div class="p-5 bd-highlight">
+        <!--    dodaj id in dodaj skuni znesek innerHtml    -->
+        <div class="d-flex bd-highlight border-bottom">
+            <div class="p-1 w-100 bd-highlight">
+               Seštevek
+            </div>
+            <div class="p-1 flex-shrink-1 bd-highlight mt-auto">
+                <p class="fw-bold">ZNESEK</p>
+            </div>
+        </div>
+        <div class="d-flex bd-highlight border-bottom">
+            <div class="p-1 w-100 bd-highlight">
+                <b>Skupaj</b>
+            </div>
+            <div class="p-1 flex-shrink-1 bd-highlight mt-auto">
+                <p class="fw-bold">ZNESEK</p>
+            </div>
+        </div>
+        <div class="d-flex bd-highlight border-bottom">
+            <div class="p-1 w-100 bd-highlight">
+                <p class="fs-5">Opomba za kupca</p>
+
+                <p class="fs-6">Ta predračun lahko plačate tudi brez PayPal računa<br>
+                    Navodila: https://youtu.be/b4PcLTs-jSo?t=12</p>
+
+                <p class="fs-6">V primeru, če želite prejeti navaden račun, mi to sporočite<br>
+                    na moj kontaktni email.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="main.js"></script>
+</html>
