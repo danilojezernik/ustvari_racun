@@ -7,26 +7,26 @@
     <!-- CSS Style -->
     <link rel="stylesheet" href="style.css"/>
 </head>
-<body class="py-3 bg-secondary">
-<div class="container">
-    <div class="row m-2">
+<body class="bg-secondary">
+<div class="container py-4 px-0">
+    <div class="row">
 
 <!--   izdajanje računa     -->
 
         <div class="col-md-4 p-0 bg-light shadow">
 
-            <div class="p-2 bd-highlight border-bottom frst-bg-color">
+            <div class="p-2 bd-highlight">
                 <div class="d-flex">
                     <div class="input-group mb-1">
-                        <input type="text" class="form-control" placeholder="Naziv storitve" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Dodaj</button>
+                        <input type="text" class="form-control" placeholder="Naziv storitve" aria-label="Recipient's username" aria-describedby="dodaj-naziv1" id="nazivText">
+                        <button class="btn btn-outline-secondary" type="button" id="dodaj-naziv1" onclick="dodajNaziv()">Dodaj</button>
                     </div>
                 </div>
             </div>
         </div>
 
 <!--   izdan račun     -->
-        <div class="col-md-8 ">
+        <div class="col-md-8 p-0">
 
             <div class="container p-0 bg-light shadow">
 
@@ -34,7 +34,7 @@
 
                 <div class="p-2 bd-highlight border-bottom frst-bg-color">
                     <div class="d-flex justify-content-between">
-                        <div class="bd-highlight"><p class="fw-bold">Račun iz ____ NASLOV STORITVE DODAJ TUKAJ</p>
+                        <div class="bd-highlight" id="dodanNaziv">
                         </div>
                         <div class="ms-auto bd-highlight"><p class="fw-bold">PRENESI PDF TUKAJ</p></div>
                     </div>
@@ -44,12 +44,12 @@
 
                 <div class="p-2 bd-highlight frst-bg-color">
                     <div class="d-flex justify-content-between">
-                        <div class="p-2 bd-highlight">
+                        <div class="bd-highlight">
 
                             <!-- Profilna slika -->
                             <img src="jaz.png" class="rounded float-start border border-1" alt="...">
                         </div>
-                        <div class="ms-auto p-2 bd-highlight">
+                        <div class="ms-auto bd-highlight">
 
                             <!-- ŠtevilkaRačuna (dodaj id="stevilkaRacuna")-->
                             <span class="fw-bold">Račun: #0205</span><br>
