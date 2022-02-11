@@ -3,29 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DUstvarjanje Računa</title>
+    <title>Ustvarjanje Računa</title>
+    <link rel="shortcut icon" href="#">
     <!-- CSS Style -->
     <link rel="stylesheet" href="style.css"/>
+
+
 </head>
 <body class="bg-secondary">
 <div class="container py-4 px-0">
     <div class="row">
 
-<!--   izdajanje računa     -->
+        <!--   izdajanje računa     -->
 
         <div class="col-md-4 p-0 bg-light shadow">
 
             <div class="p-2 bd-highlight">
                 <div class="d-flex">
                     <div class="input-group mb-1">
-                        <input type="text" class="form-control" placeholder="Naziv storitve" aria-label="Recipient's username" aria-describedby="dodaj-naziv1" id="nazivText">
-                        <button class="btn btn-outline-secondary" type="button" id="dodaj-naziv1" onclick="dodajNaziv()">Dodaj</button>
+                        <input type="text" class="form-control" placeholder="Naziv storitve"
+                               aria-label="Recipient's username" aria-describedby="dodaj-naziv1" id="nazivText">
+                        <button class="btn btn-outline-secondary" type="button" id="dodaj-naziv1"
+                                onclick="dodajNaziv()">Dodaj
+                        </button>
                     </div>
                 </div>
             </div>
+            <!-- dodajanje številke računa -->
+            <div class="p-2 bd-highlight">
+                <div class="d-flex">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control" placeholder="Številka računa"
+                               aria-label="Recipient's username" aria-describedby="dodaj-stevilko-racuna1"
+                               id="nazivStRacuna">
+                        <button class="btn btn-outline-secondary" type="button" id="dodaj-stevilko-racuna1"
+                                onclick="dodajStRacuna()">Dodaj
+                        </button>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <!-- dodajanje številke računa -->
+            <div class="p-2 bd-highlight">
+                <div class="d-flex">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Ime" id="dodajSvojeIme">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Priimek" id="dodajSvojPriimek">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control" id="dodajSvojEmail" placeholder="Vaš email naslov">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="dodajSvojoStevilko" placeholder="Vaša telefonska številka">
+                        </div>
+
+                        <div class="col-12 d-grid">
+                            <button type="submit" class="btn btn-outline-secondary" onclick="vnesiPodatke()">Dodaj</button>
+                        </div>
+                    </form>
+                </div>
+                <hr>
+            </div>
         </div>
 
-<!--   izdan račun     -->
+
+        <!--   izdan račun     -->
         <div class="col-md-8 p-0">
 
             <div class="container p-0 bg-light shadow">
@@ -35,7 +81,7 @@
                 <div class="p-2 bd-highlight border-bottom frst-bg-color">
                     <div class="d-flex justify-content-between">
                         <div class="bd-highlight" id="dodanNaziv">
-<!--                            -->
+                            <!--                            -->
                         </div>
                         <div class="ms-auto bd-highlight"><p class="fw-bold">PRENESI PDF TUKAJ</p></div>
                     </div>
@@ -53,7 +99,7 @@
                         <div class="ms-auto bd-highlight">
 
                             <!-- ŠtevilkaRačuna (dodaj id="stevilkaRacuna")-->
-                            <span class="fw-bold">Račun: #0205</span><br>
+                            <div id="stevilkaRacuna"></div>
                             Izdano: 23. dec. 2021<br>
                             Zapade: 2. jan. 2022
                         </div>
@@ -108,76 +154,72 @@
 
                 <div class="px-2 bd-highlight">
                     <div class="d-flex bd-highlight">
-                        <div class="p-2 w-100 bd-highlight">
-                            Račun za<br>
-                            <span class="fw-bold">Uroš Jarc</span><br>
-                            <span class="fw-bold">uros.jarc@gmail.com</span><br>
-                            <span class="fw-bold">telefon: +386 51 240 885</span>
+                        <div class="p-2 w-100 bd-highlight" id="racunZa">
+
                         </div>
                         <div class="p-2 flex-shrink-1 bd-highlight mt-auto">
-                            <p class="fw-bold">CELOTEN ZNESEK</p>
+                        <p class="fw-bold">CELOTEN ZNESEK</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Elementi (dodaj id="elementi") in dodana vrednost cene storitve-->
+            <!-- Elementi (dodaj id="elementi") in dodana vrednost cene storitve-->
 
-                <div class="px-5 pt-5 bd-highlight">
-                    <div class="h5">Elementi</div>
-                    <!--    dodaj id in dodaj spodnji HTML    -->
-                    <div class="d-flex bd-highlight border border-1">
-                        <div class="p-4 w-100 bd-highlight">
+            <div class="px-5 pt-5 bd-highlight">
+                <div class="h5">Elementi</div>
+                <!--    dodaj id in dodaj spodnji HTML    -->
+                <div class="d-flex bd-highlight border border-1">
+                    <div class="p-4 w-100 bd-highlight">
 
-                            <b>Inštrukcije programiranja</b><br>
-                            120 x0,32 EUR | 3. jan. 2022<br>
-
-                        </div>
-
-                        <div class="p-4 flex-shrink-1 bd-highlight mt-auto">
-                            <p class="fw-bold">ZNESEK</p>
-                        </div>
+                        <b>Inštrukcije programiranja</b><br>
+                        120 x0,32 EUR | 3. jan. 2022<br>
 
                     </div>
+
+                    <div class="p-4 flex-shrink-1 bd-highlight mt-auto">
+                        <p class="fw-bold">ZNESEK</p>
+                    </div>
+
                 </div>
-
-                <!-- Seštevek (dodaj id="seštevek") in dodana končna vrednost celotne storitve-->
-
-                <div class="p-5 bd-highlight">
-                    <!--    dodaj id in dodaj skuni znesek innerHtml    -->
-                    <div class="d-flex bd-highlight border-bottom">
-                        <div class="p-1 w-100 bd-highlight">
-                            Seštevek
-                        </div>
-                        <div class="p-1 flex-shrink-1 bd-highlight mt-auto">
-                            <p class="fw-bold">ZNESEK</p>
-                        </div>
-                    </div>
-                    <div class="d-flex bd-highlight border-bottom">
-                        <div class="p-1 w-100 bd-highlight">
-                            <b>Skupaj</b>
-                        </div>
-                        <div class="p-1 flex-shrink-1 bd-highlight mt-auto">
-                            <p class="fw-bold">ZNESEK</p>
-                        </div>
-                    </div>
-                    <div class="d-flex bd-highlight border-bottom">
-                        <div class="p-1 w-100 bd-highlight">
-                            <p class="fs-5">Opomba za kupca</p>
-
-                            <p class="fs-6">Ta predračun lahko plačate tudi brez PayPal računa<br>
-                                Navodila: https://youtu.be/b4PcLTs-jSo?t=12</p>
-
-                            <p class="fs-6">V primeru, če želite prejeti navaden račun, mi to sporočite<br>
-                                na moj kontaktni email.</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- Seštevek (dodaj id="seštevek") in dodana končna vrednost celotne storitve-->
+
+            <div class="p-5 bd-highlight">
+                <!--    dodaj id in dodaj skuni znesek innerHtml    -->
+                <div class="d-flex bd-highlight border-bottom">
+                    <div class="p-1 w-100 bd-highlight">
+                        Seštevek
+                    </div>
+                    <div class="p-1 flex-shrink-1 bd-highlight mt-auto">
+                        <p class="fw-bold">ZNESEK</p>
+                    </div>
+                </div>
+                <div class="d-flex bd-highlight border-bottom">
+                    <div class="p-1 w-100 bd-highlight">
+                        <b>Skupaj</b>
+                    </div>
+                    <div class="p-1 flex-shrink-1 bd-highlight mt-auto">
+                        <p class="fw-bold">ZNESEK</p>
+                    </div>
+                </div>
+                <div class="d-flex bd-highlight border-bottom">
+                    <div class="p-1 w-100 bd-highlight">
+                        <p class="fs-5">Opomba za kupca</p>
+
+                        <p class="fs-6">Ta predračun lahko plačate tudi brez PayPal računa<br>
+                            Navodila: https://youtu.be/b4PcLTs-jSo?t=12</p>
+
+                        <p class="fs-6">V primeru, če želite prejeti navaden račun, mi to sporočite<br>
+                            na moj kontaktni email.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
-
+</div>
 
 
 </body>
