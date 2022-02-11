@@ -17,6 +17,17 @@ let dodajSvojEmail = document.getElementById("dodajSvojEmail");
 let dodajSvojoStevilko = document.getElementById("dodajSvojoStevilko");
 //konec vnosa kontakta
 
+let elementi = document.getElementById("elementi");
+let danStoritve = document.getElementById("danStorite");
+let enojniZnesek = document.getElementById("enojniZnesek");
+let minuteDodaj = document.getElementById("minuteDodaj");
+let urnaPostavka = document.getElementById("urnaPostavka");
+let dodajDatumVpisa = document.getElementById("dodajDatumVpisa");
+
+let minute = "";
+let urnapostavka = "";
+//konec enojni znesek
+
 function dodajNaziv() {
     let textNaziv = nazivText.value;
     if (!pritisnjeno) {
@@ -67,6 +78,17 @@ function vnesiPodatke() {
                         <span class="fw-bold">${email}</span><br>
                         <span class="fw-bold">telefon: ${mobitel}</span>`;
     racunZa.appendChild(kontakti);
+}
+
+function dodajZnesekEnotni() {
+    let min = parseFloat(minuteDodaj.value);
+    let postavka = parseFloat(urnaPostavka.value);
+    let rezultat;
+    rezultat = min * postavka;
+    document.getElementById("enojniZnesek").value = rezultat;
+    let enojniZnesek = `${rezultat}€`;
+    document.getElementById("enojniZnesek").innerHTML = enojniZnesek;
+    enojniZnesek.appendChild(rezultat);
 }
 
 //funkcija reset
