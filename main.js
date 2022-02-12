@@ -17,15 +17,14 @@ let dodajSvojEmail = document.getElementById("dodajSvojEmail");
 let dodajSvojoStevilko = document.getElementById("dodajSvojoStevilko");
 //konec vnosa kontakta
 
-let elementi = document.getElementById("elementi");
+let element = document.getElementById("element");
 let danStoritve = document.getElementById("danStorite");
 let enojniZnesek = document.getElementById("enojniZnesek");
 let minuteDodaj = document.getElementById("minuteDodaj");
 let urnaPostavka = document.getElementById("urnaPostavka");
+let sestevek = document.getElementById("sestevek");
+let skupaj = document.getElementById("skupaj");
 let dodajDatumVpisa = document.getElementById("dodajDatumVpisa");
-
-let minute = "";
-let urnapostavka = "";
 //konec enojni znesek
 
 function dodajNaziv() {
@@ -58,12 +57,12 @@ function odstrani(mesto) {
 
 //dodaj številko računa
 function dodajStRacuna() {
-        let textStRacuna = nazivStRacuna.value;
-        let stRacun = document.createElement("div");
-        stRacun.innerHTML = `<span class="fw-bold">Račun: #${textStRacuna}</span><br>`;
-        stevilkaRacuna.appendChild(stRacun);
-        document.getElementById("nazivStRacuna").value = ""; //izbriše vpisano vrednost
-        reset();
+    let textStRacuna = nazivStRacuna.value;
+    let stRacun = document.createElement("div");
+    stRacun.innerHTML = `<span class="fw-bold">Račun: #${textStRacuna}</span><br>`;
+    stevilkaRacuna.appendChild(stRacun);
+    document.getElementById("nazivStRacuna").value = ""; //izbriše vpisano vrednost
+    reset();
 }
 
 //vneseni podatki naslovnika računa
@@ -83,12 +82,40 @@ function vnesiPodatke() {
 function dodajZnesekEnotni() {
     let min = parseFloat(minuteDodaj.value);
     let postavka = parseFloat(urnaPostavka.value);
+    let sestevek1 = parseFloat(sestevek.value);
+    let vsota = parseFloat(skupaj.value);
     let rezultat;
     rezultat = min * postavka;
-    document.getElementById("enojniZnesek").value = rezultat;
-    let enojniZnesek = `${rezultat}€`;
-    document.getElementById("enojniZnesek").innerHTML = enojniZnesek;
-    enojniZnesek.appendChild(rezultat);
+    vsota += rezultat;
+    sestevek1 += rezultat;
+    let elementi = document.createElement("element");
+    elementi.innerHTML = `
+<div class="d-flex bd-highlight border border-1">
+     <div class="p-4 w-100 bd-highlight">
+
+                        <b>Inštrukcije programiranja</b><br>
+                        <span id="minute">120 x0,32 EUR</span> | <span id="danStorite">3. jan. 2022</span><br>
+
+                    </div>
+
+                    <div class="p-4 flex-shrink-1 bd-highlight mt-auto">
+                        <span class="fw-bold" id="enojniZnesek">${rezultat}</span>
+                    </div></div>`;
+    element.appendChild(elementi);
+
+    let skupni1 = document.createElement("sestevek");
+    skupni1.innerHTML = `${sestevek1}€`;
+    sestevek.appendChild(skupni1);
+
+    let skupni2 = document.createElement("skupaj");
+    skupni2.innerHTML = `${vsota}€`;
+    skupaj.appendChild(skupni2);
+
+    // document.getElementById("sestevek").innerHTML = sestevek;
+    // sestevek.appendChild(sestevek1);
+    // document.getElementById("skupaj").innerHTML = vsota;
+
+
 }
 
 //funkcija reset
