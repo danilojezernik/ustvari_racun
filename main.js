@@ -119,10 +119,12 @@ function dodajZnesekEnotni() {
     let vsota2 = parseFloat(skupaj2.value);
     let rezultat;
     rezultat = min * postavka;
-    vsota += rezultat;
-    sestevek1 += rezultat;
+    let rezultat2;
+    rezultat2 = rezultat;
+    let rezultat3;
+    rezultat3 = rezultat;
     let elementi = document.createElement("element");
-    elementi.innerHTML = `
+    elementi.innerHTML += `
                             <div class="d-flex bd-highlight border border-1 mt-2">
                             <button style="border: 0; background: transparent;" onclick="odstrani(${spisek.length})">
                             <img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/></button>
@@ -137,28 +139,28 @@ function dodajZnesekEnotni() {
 
     element.appendChild(elementi);
     spisek.push(elementi);
-
+//Seštevek
     let skupni1 = document.createElement("sestevek");
-    skupni1.innerHTML = `
+    skupni1.innerHTML += `
     
-                            ${sestevek1}€`;
+                            ${rezultat2}€`;
 
     sestevek.appendChild(skupni1);
-
+//Skupaj
     let skupni2 = document.createElement("skupaj");
-    skupni2.innerHTML = `
-                            ${vsota}€`;
+    skupni2.innerHTML += `
+                            ${rezultat3}€`;
 
     skupaj.appendChild(skupni2);
-
+//SKupaj
     let skupni3 = document.createElement("skupaj");
-    skupni3.innerHTML = `
+    skupni3.innerHTML += `
                              Za plačilo:
-                            <span class="display-6">${vsota2}€</span>
+                            <span class="display-6">${rezultat3}€</span>
                             
                         `;
     skupaj2.appendChild(skupni3);
-reset();
+    reset();
 }
 
 //izbriše en vnos
