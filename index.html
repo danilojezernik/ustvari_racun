@@ -36,10 +36,20 @@
                 <div class="d-flex">
                     <div class="input-group mb-1">
                         <input type="text" class="form-control" placeholder="Številka računa"
-                               aria-label="Recipient's username" aria-describedby="dodaj-stevilko-racuna1"
                                id="nazivStRacuna">
-                        <button class="btn btn-outline-secondary" type="button" id="dodaj-stevilko-racuna1"
+                        <button class="btn btn-outline-secondary" type="button"
                                 onclick="dodajStRacuna()">Dodaj
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-2 bd-highlight">
+                <div class="d-flex">
+                    <div class="input-group mb-1">
+                        <input type="datetime-local" class="form-control" id="datumZapadlostiRc">
+                        <button class="btn btn-outline-secondary" type="button"
+                                onclick="dodajZapadlost()">Dodaj
                         </button>
                     </div>
                 </div>
@@ -123,14 +133,20 @@
                         <div class="bd-highlight">
 
                             <!-- Profilna slika -->
-                            <img src="jaz.png" class="rounded float-start border border-1" alt="...">
+                            <img src="jaz.png" class="rounded float-start border border-1">
                         </div>
                         <div class="ms-auto bd-highlight">
 
                             <!-- ŠtevilkaRačuna (dodaj id="stevilkaRacuna")-->
-                            <div id="stevilkaRacuna"></div>
-                            Izdano: 23. dec. 2021<br>
-                            Zapade: 2. jan. 2022
+                            <div id="stevilkaRacuna">
+
+                            </div>
+                            <div id="datumDanes">
+
+                            </div>
+                            <div id="datumZapadel">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -161,7 +177,7 @@
                             https://danilojezernik.com/instrukcije
                         </div>
                         <div class="p-2 flex-shrink-1 bd-highlight mt-auto">
-                            <p class="fw-bold">CELOTEN ZNESEK</p>
+                            <div class="fw-bold" id="znesekKoncni">CELOTEN ZNESEK</div>
                         </div>
                     </div>
                 </div>
@@ -187,7 +203,7 @@
 
                         </div>
                         <div class="p-2 flex-shrink-1 bd-highlight mt-auto">
-                            <p class="fw-bold">CELOTEN ZNESEK</p>
+
                         </div>
                     </div>
                 </div>
