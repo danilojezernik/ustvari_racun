@@ -203,3 +203,7 @@ function preview_image(event) {
 function izbrisiSebe(dodanNaziv) {
     dodanNaziv.remove();
 }
+
+$('.new_Btn').click(function() {
+    $('#html_btn').click();
+});
