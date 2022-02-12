@@ -83,8 +83,13 @@ function dodajStRacuna() {
 function dodajZapadlost() {
     let zapadel = datumZapadlostiRc.value;
     let rok = document.createElement("div");
-    rok.innerHTML = `Zapade: ${zapadel}`;
+    rok.innerHTML = `
+                            <button style="border: 0; background: transparent;" onclick="odstrani(${spisek.length})">
+                            <img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/>
+                            </button>
+    Zapade: ${zapadel}`;
     datumZapadel.appendChild(rok);
+    spisek.push(rok);
 }
 
 //vneseni podatki naslovnika računa
@@ -183,6 +188,15 @@ function reset() {
     document.getElementById("minuteDodaj").value = null;
     document.getElementById("urnaPostavka").value = null;
     document.getElementById("dodajDatumVpisa").value = null;
+}
+
+function preview_image(event) {
+    let reader = new FileReader();
+    reader.onload = function(){
+        let output = document.getElementById('output_image');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
 }
 
 //izbriše vse vnose
