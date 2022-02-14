@@ -32,34 +32,21 @@ let datumDanes = document.getElementById("datumDanes");
 
 function dodajNaziv() {
     let textNaziv = nazivText.value;
-    let naziv = document.createElement("div").appendChild(document.createElement(`dodanNaziv`));
-        naziv.innerHTML = `
-                            <button style="border: 0; background: transparent;" onclick="odstrani(${spisek.length})">
-                            <img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/>
-                            </button>
+    dodanNaziv.innerHTML = `
                             <span class="fw-bold">${textNaziv}</span>`;
-
 //<button style="border: 0; background: transparent;" onclick="izbrisiSebe(dodanNaziv)">
 //<img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/></button>
-        dodanNaziv.appendChild(naziv);
         reset();
-        spisek.push(naziv);
 }
 
 //dodaj številko računa
 function dodajStRacuna() {
     let textStRacuna = nazivStRacuna.value;
-    let stRacun = document.createElement("div");
-    stRacun.innerHTML = `
-                            <button style="border: 0; background: transparent;" onclick="odstrani(${spisek.length})">
-                            <img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/>
-                            </button>
+    stevilkaRacuna.innerHTML = `
 
                         <span class="fw-bold">Račun: #${textStRacuna}</span><br>`;
 
-    stevilkaRacuna.appendChild(stRacun);
     reset();
-    spisek.push(stRacun);
 
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -67,29 +54,16 @@ function dodajStRacuna() {
     let yyyy = today.getFullYear();
     today = mm + '/' + dd + '/' + yyyy;
 
-    let danasnji = document.createElement("div");
-    danasnji.innerHTML = `
-    
-                            <button style="border: 0; background: transparent;" onclick="odstrani(${spisek.length})">
-                            <img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/>
-                            </button>
+    datumDanes.innerHTML =
 
-                            Račun izdan: ${today}`;
-
-    datumDanes.appendChild(danasnji);
-    spisek.push(danasnji);
+                            `Račun izdan: ${today}`;
 }
 
 function dodajZapadlost() {
     let zapadel = datumZapadlostiRc.value;
-    let rok = document.createElement("div");
-    rok.innerHTML = `
-                            <button style="border: 0; background: transparent;" onclick="odstrani(${spisek.length})">
-                            <img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/>
-                            </button>
-    Zapade: ${zapadel}`;
-    datumZapadel.appendChild(rok);
-    spisek.push(rok);
+    datumZapadel.innerHTML =
+
+                            `Zapade: ${zapadel}`;
 }
 
 //vneseni podatki naslovnika računa
@@ -98,36 +72,28 @@ function vnesiPodatke() {
     let priimek = dodajSvojPriimek.value;
     let email = dodajSvojEmail.value;
     let mobitel = dodajSvojoStevilko.value;
-    let kontakti = document.createElement("div");
-    kontakti.innerHTML = `
 
-                            Račun za:
-                            <button style="border: 0; background: transparent;" onclick="odstrani(${spisek.length})">
-                            <img src="https://img.icons8.com/ios-glyphs/30/000000/xbox-x.png"/>
-                            </button>
-                            <br>
+    racunZa.innerHTML = `
+
+                            Račun za:<br>
                             <span class="fw-bold">${ime} ${priimek}</span><br>
                             <span class="fw-bold">${email}</span><br>
                             <span class="fw-bold">telefon: ${mobitel}</span>`;
 
-    racunZa.appendChild(kontakti);
     reset();
-    spisek.push(kontakti);
 }
 
 function dodajZnesekEnotni() {
     let datum = dodajDatumVpisa.value;
     let min = parseFloat(minuteDodaj.value);
     let postavka = parseFloat(urnaPostavka.value);
-    let sestevek1 = parseFloat(sestevek.value);
-    let vsota = parseFloat(skupaj.value);
-    let vsota2 = parseFloat(skupaj2.value);
     let rezultat;
     rezultat = min * postavka;
     let rezultat2;
-    rezultat2 = rezultat;
+    rezultat2 = rezultat + rezultat;
     let rezultat3;
-    rezultat3 = rezultat;
+    rezultat3 = rezultat + rezultat;
+
     let elementi = document.createElement("element");
     elementi.innerHTML += `
                             <div class="d-flex bd-highlight border border-1 mt-2">
@@ -144,28 +110,22 @@ function dodajZnesekEnotni() {
 
     element.appendChild(elementi);
     spisek.push(elementi);
+
 //Seštevek
-    let skupni1 = document.createElement("sestevek");
-    skupni1.innerHTML += `
+    sestevek.innerHTML = `
     
                             ${rezultat2}€`;
 
-    sestevek.appendChild(skupni1);
 //Skupaj
-    let skupni2 = document.createElement("skupaj");
-    skupni2.innerHTML += `
+    skupaj.innerHTML = `
                             ${rezultat3}€`;
 
-    skupaj.appendChild(skupni2);
 //SKupaj
-    let skupni3 = document.createElement("skupaj");
-    skupni3.innerHTML += `
+    skupaj2.innerHTML = `
                              Za plačilo:
-                            <span class="display-6">${rezultat3}€</span>
-                            
-                        `;
-    skupaj2.appendChild(skupni3);
+                            <span class="display-6">${rezultat3}€</span>`;
     reset();
+
 }
 
 //izbriše en vnos
@@ -188,7 +148,13 @@ function reset() {
     document.getElementById("minuteDodaj").value = null;
     document.getElementById("urnaPostavka").value = null;
     document.getElementById("dodajDatumVpisa").value = null;
+
 }
+
+//Dodaj sliko
+$('.new_Btn').click(function() {
+    $('#html_btn').click();
+});
 
 function preview_image(event) {
     let reader = new FileReader();
@@ -204,6 +170,3 @@ function izbrisiSebe(dodanNaziv) {
     dodanNaziv.remove();
 }
 
-$('.new_Btn').click(function() {
-    $('#html_btn').click();
-});
